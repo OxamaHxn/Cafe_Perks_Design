@@ -7,35 +7,34 @@ import ScannerScreen from '../Screen/ScanScreen';
 import OrdersScreen from '../Screen/MyOrders';
 import SettingsScreen from '../Screen/Settings';
 import {screenHeight, screenWidth} from '../Config/screenRatio';
+import Today from '../Screen/Today';
+import Messages from '../Screen/Messages';
+import AddTable from '../Screen/Settings/AddTable';
+import AddMenu from '../Screen/Settings/AddMenu';
 
 const Tab = createBottomTabNavigator();
 const tabs = [
   {
-    name: 'Home',
-    component: HomeScreen,
-    icon: require('../../Assets/homeicon.png'),
+    name: 'Today',
+    component: Today,
+    icon: require('../../Assets/today.png'),
   },
   {
-    name: 'Menu',
-    component: MenuScreen,
+    name: 'Messages',
+    component: Messages,
 
-    icon: require('../../Assets/menuicon.png'),
+    icon: require('../../Assets/messages.png'),
   },
-  {
-    name: 'Scan',
-    component: ScannerScreen,
 
-    icon: require('../../Assets/qrfull.png'),
-  },
   {
-    name: 'Orders',
+    name: 'My Orders',
     component: OrdersScreen,
 
     icon: require('../../Assets/ordricon.png'),
   },
   {
-    name: 'Setting',
-    component: SettingsScreen,
+    name: 'Settings',
+    component: AddMenu,
     icon: require('../../Assets/settingsicon.png'),
   },
 ];
@@ -43,13 +42,13 @@ export default class BottomNavigation extends Component {
   render() {
     return (
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName="Settings"
         tabBarOptions={{
           showLabel: false,
           tabStyle: {
             backgroundColor: '#D60000',
             height: 80,
-            bottom: Platform.OS === "ios" ? 0 : 30,
+            bottom: Platform.OS === 'ios' ? 0 : 30,
             justifyContent: 'flex-start',
           },
           tabBarItemStyle: {
@@ -69,8 +68,8 @@ export default class BottomNavigation extends Component {
                     justifyContent: 'center',
                     // backgroundColor: focused ? 'white' : '#D60000',
                     borderRadius: 60,
-                    height: 60,
-                    width: 60,
+                    height: 70 * screenHeight,
+                    width: 70 * screenHeight,
                     backgroundColor: focused ? 'white' : '#D60000',
                   }}>
                   <Image
@@ -85,7 +84,6 @@ export default class BottomNavigation extends Component {
                   <Text
                     style={{
                       fontSize: 11,
-                      backgroundColor: focused ? 'white' : '#D60000',
                       color: focused ? '#D60000' : '#FECF00',
                     }}>
                     {tab.name}

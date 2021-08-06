@@ -26,7 +26,7 @@ export default styles = StyleSheet.create({
 
     elevation: 7,
     width: '90%',
-    minHeight: 160 * screenHeight,
+    minHeight: 140 * screenHeight,
     backgroundColor: 'white',
     alignSelf: 'center',
     borderRadius: 11,
@@ -37,7 +37,6 @@ export default styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 20 * screenHeight,
     alignSelf: 'center',
   },
   cardFirstCol: {
@@ -49,7 +48,7 @@ export default styles = StyleSheet.create({
     height: '100%',
   },
   cardSecondCol: {
-    flex: 2,
+    flex: 1.5,
     alignSelf: 'center',
     justifyContent: 'center',
     marginHorizontal: 20 * screenHeight,
@@ -73,10 +72,11 @@ export default styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     zIndex: 100,
+    marginVertical: 5,
   },
   tableTextBtn: {
     height: 23 * screenHeight,
-    alignSelf: 'flex-end',
+    alignSelf: 'center',
   },
   btnText: (color, underlined) => ({
     textDecorationLine: underlined ? 'underline' : 'none',
@@ -85,4 +85,23 @@ export default styles = StyleSheet.create({
     color,
     textAlign: 'center',
   }),
+  circle: check => ({
+    height: 30 * screenHeight,
+    width: 30 * screenHeight,
+    borderWidth: 0.5,
+    borderColor: 'red',
+    borderRadius: 15,
+    overflow: 'hidden',
+    backgroundColor: check ? 'red' : 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }),
+  text: {
+    fontSize: 8 * screenHeight,
+    paddingVertical: 10,
+  },
+  checkMark: {
+    height: 12 * screenHeight,
+    width: 19 * screenHeight,
+  },
 });
