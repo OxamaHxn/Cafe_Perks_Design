@@ -11,6 +11,8 @@ import Today from '../Screen/Today';
 import Messages from '../Screen/Messages';
 import AddTable from '../Screen/Settings/AddTable';
 import AddMenu from '../Screen/Settings/AddMenu';
+import AddMenuList from '../Screen/Settings/AddMenuList';
+import AddTableList from '../Screen/Settings/AddTableList';
 
 const Tab = createBottomTabNavigator();
 const tabs = [
@@ -34,7 +36,7 @@ const tabs = [
   },
   {
     name: 'Settings',
-    component: AddMenu,
+    component: AddTableList,
     icon: require('../../Assets/settingsicon.png'),
   },
 ];
