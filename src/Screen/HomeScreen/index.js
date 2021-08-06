@@ -5,6 +5,7 @@ import Feather from "react-native-vector-icons/Feather"
 import { screenHeight } from '../../Config/screenRatio';
 import { SliderBox } from "react-native-image-slider-box";
 import { Dimensions } from 'react-native';
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
 const images = [
     require('../../../Assets/slideimgone.png'),
@@ -32,7 +33,6 @@ export default class HomeScreen extends Component {
         return (
             <SafeAreaView
             style={{flex: 1}}
-        forceInset={{top: 'never', bottom: 'never'}}
             >
             <View  style={styles.container}>
                 <Header
@@ -52,28 +52,31 @@ export default class HomeScreen extends Component {
                 left={
                     <TouchableOpacity
                     style={{alignItems: "center"}}
-                    onPress={this.handleBack}
                     >
                         <Image
                         style={styles.imageStyle}
-                        source={require("../../../Assets/profileheader.png")}
+                        source={require("../../../Assets/chatimg.png")}
                         />
                     </TouchableOpacity>
                 }
                 right={
                     <TouchableOpacity
                     style={{alignItems: "center"}}
-                    onPress={this.handleBack}
                     >
-                        <Image
-                        source={require("../../../Assets/carticon.png")}
+                      <View style={styles.badge}>
+                        <Text style={styles.badgeNumber}>10</Text>
+                        
+                      </View>
+                      <Image
+                        // style={styles.imageStyle}
+                        source={require("../../../Assets/cartRaw.png")}
                         />
                     </TouchableOpacity>
                 }
                 />
                 <SliderBox
           images={this.state.images}
-          sliderBoxHeight={415 * screenHeight}
+          sliderBoxHeight={hp('51')}
           ImageComponentStyle={{width: '96%',}}
           autoplay
           circleLoop

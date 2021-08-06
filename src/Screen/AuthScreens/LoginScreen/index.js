@@ -8,8 +8,12 @@ import {
     TextInput,
   } from 'react-native';
   import styles from "./style"
+  import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+  } from 'react-native-responsive-screen';
   import TextInputFields from '../../../components/TextInputFields';
-import PrimaryButton from '../../../components/PrimaryButton';
+import SecondButton from '../../../components/SecondButton';
 export default class LoginScreen extends Component {
     render() {
         return (
@@ -31,8 +35,8 @@ export default class LoginScreen extends Component {
                     <TouchableOpacity
               style={styles.loginbt}
               >
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <PrimaryButton text={"Login"} onPress={() => this.props.navigation.navigate('SignUpScreen')}/>
+              <View style={{flexDirection: 'row', alignItems: 'center',}}>
+                <SecondButton text={"Login"} onPress={() => this.props.navigation.navigate('SignUpScreen')}/>
               </View>
             </TouchableOpacity>
                     </View>

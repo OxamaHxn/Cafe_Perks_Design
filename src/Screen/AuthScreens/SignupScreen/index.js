@@ -7,7 +7,7 @@ import {
     TouchableOpacity,
     Image
   } from 'react-native';
-import PrimaryButton from '../../../components/PrimaryButton';
+import SecondButton from '../../../components/SecondButton';
 import TextInputFields from '../../../components/TextInputFields';
 import styles from "./style"
 export default class SignUpScreen extends Component {
@@ -38,7 +38,7 @@ export default class SignUpScreen extends Component {
                             />
                         </View>
                         <View style={styles.loginView}>
-                        <PrimaryButton text={"SUBSCRIBE"} onPress={() => this.props.navigation.navigate('BottomNavigation')}/>
+                        <SecondButton text={"SUBSCRIBE"} onPress={() => this.props.navigation.navigate('BottomNavigation')}/>
                         </View>
                         <Text style={styles.MiddleText}>Ou</Text>
                         <View style={styles.buttons}>

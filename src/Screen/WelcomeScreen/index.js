@@ -24,7 +24,7 @@ export default class WelcomeScreen extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                     style={styles.loginButton}
-                    onPress={()=>this.props.navigation.navigate('BottomNavigation')}
+                    onPress={()=>this.props.navigation.navigate('LoginScreen')}
                     >
                         <Text style={styles.loginText}>LOGIN</Text>
                     </TouchableOpacity>

@@ -1,6 +1,8 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import { fullWidth, screenHeight, screenWidth } from "../../Config/screenRatio";
 import { Dimensions } from "react-native";
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+
 
 export default StyleSheet.create({
     container: {
@@ -21,49 +23,71 @@ export default StyleSheet.create({
         marginTop: Platform.OS === 'ios' ? 6 : 7,
         flexDirection: 'row',
         marginHorizontal: 5,
+        flex:1,
       },
       leftBox: {
-        width: '50%',
-        height: 176 * screenHeight,
+        width: wp('47.5'),
+        // height: Platform.OS === "android" ? hp('23.5') : hp('21.2'),
         backgroundColor: '#FECF00',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 2,
+        marginBottom: Platform.OS === "android" ? hp('4%') : hp('1.4%'),
+        flex:1
       },
       boxtxt: {
         fontWeight: '600',
-        fontSize: 22,
+        fontSize: hp('2'),
         margin: 10,
       },
       rightBox: {
-        width: '50%',
-        height: 176 * screenHeight,
-        backgroundColor: '#FECF00',
+        width: wp('47.7'),
+        backgroundColor: '#D60000',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 2,
+        marginBottom: Platform.OS === "android" ? hp('4%') : hp('1.4%'),
+        flex:1
       },
       secondtxt: {
         fontWeight: '600',
-        fontSize: 22,
+        fontSize: hp('2'),
         margin: 10,
         color: '#ffff',
       },
       imageStyle: {
-        height: 51 * screenHeight,
-        width: 51 * screenWidth,
+        height: 50,
+        width: 50,
+        borderRadius: 25,
       },
       mid: {
-        flexDirection: "column"
+        right: 35
       },
       midText: {
         color: "#D60000",
-        fontSize: 20,
+        fontSize: hp('2'),
         fontWeight: "600"
       },
       location: {
         flexDirection: 'row',
         marginTop: 8,
+      },
+      badge: {
+        minHeight: hp('1'),
+        minWidth: wp('2'),
+        backgroundColor: "#D60000",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 20,
+        position: "absolute",
+        right: -5,
+        top: 0,
+      },
+      badgeNumber: {
+        fontSize: 8 * screenHeight,
+        color: "white",
+        fontWeight: "bold",
+        padding: 2,
       },
       midbottom: {color: '#0B0B0B', fontSize: 11, marginLeft: 5}
 })

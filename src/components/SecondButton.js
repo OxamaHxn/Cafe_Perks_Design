@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native'
 import { screenHeight, screenWidth } from '../Config/screenRatio'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 
-export default PrimaryButton = ({height, width, onPress, text}) => {
+export default SecondButton = ({height, width, onPress, text}) => {
     return (
         <TouchableOpacity
                 style={styles.loginButton(height,width)}
@@ -27,9 +27,13 @@ const styles = StyleSheet.create({
     signupText: {
         color: '#ffff',
         fontWeight: 'bold',
-        fontSize: hp('1.7'),
+        fontSize: hp('1.9'),
       },
-    loginButton:(height=hp('6%'),width=wp('51%')) =>({
+
+      arrow:{
+        left: 8
+      },
+    loginButton:(height=hp('6%'),width=wp('41%')) =>({
         width,
         height,
         margin: 5,
@@ -45,6 +49,4 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 10,
       }),
-      arrow:{
-      }
 })
