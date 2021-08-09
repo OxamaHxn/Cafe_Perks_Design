@@ -3,7 +3,7 @@ import {View, Image, Text, Platform, SafeAreaView} from 'react-native';
 import HomeScreen from '../Screen/HomeScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MenuScreen from '../Screen/MenuScreen';
-import ScannerScreen from '../Screen/ScanScreen';
+import Menu from '../Config/menuScreen'
 import OrdersScreen from '../Screen/MyOrders';
 import SettingsScreen from '../Screen/Settings';
 import {screenHeight, screenWidth} from '../Config/screenRatio';
@@ -20,7 +20,7 @@ const tabs = [
   },
   {
     name: 'Menu',
-    component: MenuScreen,
+    component: Menu,
 
     icon: require('../../Assets/menuicon.png'),
   },

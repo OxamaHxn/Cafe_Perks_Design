@@ -9,6 +9,8 @@ import {NavigationContainer, CommonActions} from '@react-navigation/native';
 import SignUpScreen from './src/Screen/AuthScreens/SignupScreen';
 import { StatusBar } from 'react-native';
 import BottomNavigation from './src/Navigations/BottomNavigations';
+import Menu from './src/Config/menuScreen'
+import Cart from './src/Config/cart';
 import HomeScreen from './src/Screen/HomeScreen';
 
 const Stack = createStackNavigator();
@@ -62,6 +64,20 @@ export default class App extends Component {
           <Stack.Screen 
           name="HomeScreen"
           component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
+          />
+          <Stack.Screen 
+          name="Menu"
+          component={Menu}
+          options={{
+            headerShown: false,
+          }}
+          />
+          <Stack.Screen 
+          name="Cart"
+          component={Cart}
           options={{
             headerShown: false,
           }}
